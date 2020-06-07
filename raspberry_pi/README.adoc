@@ -35,5 +35,5 @@ eog output.jpg
 [source,bash]
 ----
 bash scripts/install_opencv.sh
-
+python3 camera_test/video.py
 ----
