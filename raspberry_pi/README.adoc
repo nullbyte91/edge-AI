@@ -1,0 +1,32 @@
+= raspberry pi
+:idprefix:
+:idseparator: -
+:sectanchors:
+:sectlinks:
+:sectnumlevels: 6
+:sectnums:
+:toc: macro
+:toclevels: 6
+:toc-title: Table of Contents
+
+toc::[]
+
+== Camera Module
+=== Setup
+==== Hardware Setup
+image::image/pi-camera.jpg[]
+
+==== Enable Camera Module
+[source,bash]
+----
+sudo raspi-config
+
+# Interface option -> Camera -> Yes -> ok -> Finish
+----
+
+=== Test
+[source,bash]
+----
+raspistill -o output.jpg
+eog output.jpg
+----
