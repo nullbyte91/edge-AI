@@ -24,9 +24,16 @@ sudo raspi-config
 # Interface option -> Camera -> Yes -> ok -> Finish
 ----
 
-=== Test
+==== Test
 [source,bash]
 ----
 raspistill -o output.jpg
 eog output.jpg
+----
+
+==== Install OpenCV + Test Video stream
+[source,bash]
+----
+bash scripts/install_opencv.sh
+
 ----
