@@ -50,3 +50,22 @@ sudo pip3 install --pre --extra-index-url https://developer.download.nvidia.com/
 # Test
 python3 -c "import tensorflow as tf" 
 ```
+
+### CUDA samples
+```bash
+bash /usr/local/cuda/bin/cuda-install-samples-10.0.sh ~
+cd ~/NVIDIA_CUDA-10.0_Samples/
+make
+# All the compiled bin
+cd bin/aarch64/linux/release
+
+```
+
+### Vision Works samples
+```bash
+bash /usr/share/visionworks/sources/install-samples.sh
+cd ~/VisionWorks-1.6-Samples
+make
+cd bin/aarch64/linux/release
+./nvx_demo_feature_tracker
+```
