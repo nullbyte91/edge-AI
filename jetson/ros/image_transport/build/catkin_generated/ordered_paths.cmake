@@ -1,1 +1,0 @@
-set(ORDERED_PATHS "/opt/ros/melodic/lib;/home/nullbyte/catkin_ws/devel/lib")
