@@ -1,0 +1,8 @@
+prefix=/home/nullbyte/Desktop/edge-AI/jetson/ros/image_transport/build/devel
+
+Name: ros_sample_image_transport
+Description: Description of ros_sample_image_transport
+Version: 0.0.0
+Cflags: 
+Libs: -L${prefix}/lib 
+Requires: 

@@ -1,0 +1,2 @@
+- setup-file:
+    local-name: /home/nullbyte/Desktop/edge-AI/jetson/ros/image_transport/build/devel/setup.sh
