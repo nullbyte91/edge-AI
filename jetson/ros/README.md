@@ -36,6 +36,42 @@ sudo rosdep init
 rosdep update
 ```
 
+## Compile CV-Bridge from Source
+```python
+The defauly cv-bridge packages compiled against default opencv that is part of 
+ubuntu 18.04. If you compile opencv from source then there will be conflict issue.
+The below method to resolve that conflict issue.
+```
+```bash 
+# Remove system ros-melodic-cv-bridge
+sudo apt-get remove ros-melodic-cv-bridge
+
+# Create a catkin_ws 
+source /opt/ros/melodic/setup.bash
+mkdir -p ~/catkin_ws/src
+cd ~/catkin_ws/
+catkin_make
+
+cd src && git clone https://github.com/ros-perception/vision_opencv && git checkout melodic
+
+vim vision_opencv/cv_bridge/CMakeLists.txt
+# Edit OpenCV PATHS in CMakeLists and include cmake file
+find_package(OpenCV 3 REQUIRED PATHS /usr/local/share/OpenCV NO_DEFAULT_PATH
+  COMPONENTS
+    opencv_core
+    opencv_imgproc
+    opencv_imgcodecs
+  CONFIG
+)
+include(/usr/local/share/OpenCV/OpenCVConfig.cmake) #under catkin_python_setup()
+
+# Build
+cd .. && catkin_make
+
+# Source the Package path
+source devel/setup.bash
+```
+
 ## Hello world - Simple publisher subscriber(c++)
 ```
 mkdir -p pubsub/build/
@@ -51,3 +87,5 @@ roscore
 # Terminal 3
 ./build/listener
 ```
+
+## Image transport
